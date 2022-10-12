@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM python:latest
 ENV WORKDIR /usr/src/app/
 WORKDIR $WORKDIR
 COPY package*.json $WORKDIR
