@@ -12,3 +12,13 @@ jobs:
       uses: bridgecrewio/checkov-action@master
       env:
         GITHUB_TOKEN: ${{secrets.THIS_IS_A_TEST_SECRET}}
+
+    - name: Expose report
+      uses: actions/upload-artifact@v2
+      with:
+        name: SARIF results
+        path: results.sarif
+
+    - uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: results.sarif
