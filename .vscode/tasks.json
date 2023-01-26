@@ -1,0 +1,85 @@
+/*{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "build",
+                // Ask dotnet build to generate full paths for file names.
+                "/property:GenerateFullPaths=true",
+                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}*/
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "twistcli_scan_image",
+            "type": "shell",
+            "command": "DOCKER_SCAN_SUGGEST=false docker build -t myimage:v1.0.1 ${workspaceFolder} && /Users/kkarim/twistcli images scan -u \"f72d61bf-3f36-419f-86c2-2895aff101bf\" -p \"VceHQSgcDjtveibRl1rUOdx1QzE=\" --address \"https://us-east1.cloud.twistlock.com/us-1-111573457\" --publish=FALSE --details myimage:v1.0.1 && docker rmi myimage:v1.0.1",
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true,
+                "reveal": "always"
+              }
+        },
+        {
+            "label": "checkov_scan_image",
+            "type": "shell",
+            "command": "DOCKER_SCAN_SUGGEST=false docker build -t checkov_scan_me - < ${relativeFile} && checkov --bc-api-key ${config:checkov.token} --dockerfile-path ${relativeFile} --docker-image checkov_scan_me --repo-id kkarim/twisty && docker image rm checkov_scan_me",
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true,
+                "reveal": "always"
+              }
+        },
+        {
+            "label": "checkov_scan_file",
+            "type": "shell",
+            "command": "checkov --bc-api-key ${config:checkov.token}  --file ${relativeFile}",
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true,
+                "reveal": "always"
+              }
+        },
+        {
+            "label": "checkov_scan_directory",
+            "type": "shell",
+            "command": "checkov --bc-api-key ${config:checkov.token} --directory ${relativeFileDirname}",
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "clear": true,
+                "reveal": "always"
+              }
+        }
+    ]
+}
