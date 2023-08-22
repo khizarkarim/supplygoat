@@ -27,7 +27,7 @@ body-parser@1.18.3:
     http-errors "~1.6.3"
     iconv-lite "0.4.23"
     on-finished "~2.3.0"
-    qs "6.5.2"
+    qs "6.10.3"
     raw-body "2.3.3"
     type-is "~1.6.16"
 
@@ -78,9 +78,9 @@ dustjs-helpers@1.4.0:
   resolved "https://registry.yarnpkg.com/dustjs-helpers/-/dustjs-helpers-1.4.0.tgz#349beb4616dacff8eae0423f11403e89276a3f47"
   integrity sha1-NJvrRhbaz/jq4EI/EUA+iSdqP0c=
 
-dustjs-linkedin@2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/dustjs-linkedin/-/dustjs-linkedin-2.5.0.tgz#0cc6e3589b1103d06e046e86afcedd78d70d721c"
+dustjs-linkedin@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/dustjs-linkedin/-/dustjs-linkedin-3.0.0.tgz#0cc6e3589b1103d06e046e86afcedd78d70d721c"
   integrity sha1-DMbjWJsRA9BuBG6Gr87deNcNchw=
 
 ee-first@1.1.1:
@@ -128,7 +128,7 @@ express@^4.16.4:
     parseurl "~1.3.2"
     path-to-regexp "0.1.7"
     proxy-addr "~2.0.4"
-    qs "6.5.2"
+    qs "6.10.3"
     range-parser "~1.2.0"
     safe-buffer "5.1.2"
     send "0.16.2"
@@ -256,9 +256,9 @@ proxy-addr@~2.0.4:
     forwarded "~0.1.2"
     ipaddr.js "1.8.0"
 
-qs@6.5.2:
+qs@6.10.3:
   version "6.5.2"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.10.3.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
   integrity sha512-N5ZAX4/LxJmF+7wN74pUD6qAh9/wnvdQcjq9TZjevvXzSUo7bfmw91saqMjzGS2xq91/odN2dW/WOl7qQHNDGA==
 
 range-parser@~1.2.0:
